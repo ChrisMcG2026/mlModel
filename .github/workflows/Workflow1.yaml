@@ -1,4 +1,4 @@
-name: mlModel-flask-example
+name: mlModelexample
 
 on:
   workflow_dispatch:
