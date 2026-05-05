@@ -1,1 +1,19 @@
-name: myfirst-workflow
+name: mlModel-flask-example
+
+on:
+  workflow_dispatch
+
+jobs:
+  runs_on: self-hosted
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v6
+
+    - name: Docker Build
+      run: docker build -t first_run .
+    
+    - name: Docker run
+      run: |
+        docker run first_run
+        docker ps
+      
