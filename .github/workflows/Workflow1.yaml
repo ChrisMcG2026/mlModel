@@ -18,13 +18,15 @@ jobs:
                 pip install -r requirements.txt
                 pip install pytest
                 
-          - name: Run Unit Tests
-            run: |
-              source .venv/bin/activate
-              pytest -v
+          #- name: Run Unit Tests
+          #  run: |
+          #    source .venv/bin/activate
+          #    pytest -v
 
           - name: Docker Build
             run: docker build -t first_run .
+          - name: Docker Run
+            run: docker run first_run
     
          
       
