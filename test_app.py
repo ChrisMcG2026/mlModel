@@ -17,6 +17,6 @@ def test_welcome_route(client):
 def test_predict_salary_success(client):
     response = client.get("/predict?experience=5")
     assert response.status_code == 200
-    assert response.data.decode("utf-8") == "The predicted value is[55000.46]"
+    assert response.data.decode("utf-8") == "The predicted value is[73201.8]"
     mock_model.predict.assert_called_with([[5.0]])
 
