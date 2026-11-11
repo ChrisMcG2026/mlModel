@@ -7,8 +7,10 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_health_check(client):
+
+def test_welcome_route(client):
+    """Verify the root endpoint returns the expected greeting."""
     response = client.get("/")
     assert response.status_code == 200
-    assert response.get_json() == {"status": "ok"}
+    assert response.data.decode("utf-8") == "Welcome Everyone"
 
