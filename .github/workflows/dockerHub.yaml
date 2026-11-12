@@ -22,11 +22,11 @@ jobs:
       - name: Login to Docker
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          username: ${{secrets.DOCKER_HUB_USERNAME}}
+          password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
       - name: Build image
-        run: docker build . -t ${{ secrets.DOCKER_HUB_USERNAME }}/salarymodel:latest
+        run: docker build . -t ${{secrets.DOCKER_HUB_USERNAME}}/salarymodel:latest
 
       - name: Push image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/salarymodel:latest
+        run: docker push ${{secrets.DOCKER_HUB_USERNAME}}/salarymodel:latest
